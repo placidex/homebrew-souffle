@@ -10,11 +10,6 @@ class Souffle < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
-  bottle do
-    cellar :any
-    sha256 "858d0bc449d6df999b741361d720debde07bccdb28df4550e28f81a84a8a05f6" => :sierra
-  end
-
   def install
     system "./configure", "--disable-silent-rules",
                           "--prefix=#{prefix}"
