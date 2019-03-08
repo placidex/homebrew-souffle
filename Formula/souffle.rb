@@ -1,8 +1,8 @@
 class Souffle < Formula
   desc "Translator of declarative Datalog programs into the C++ language."
   homepage "https://github.com/souffle-lang/souffle/wiki"
-  url "souffle-1.5.1-291-g46ffd247.pkg"
-  sha256 "a11091b6e75b44053213134496c2782a627bd64b94481a3882ca68b6050202be"
+  url "https://dl.bintray.com/souffle-lang/osx/souffle-1.5.1-293-g835fb00a.pkg"
+  sha256 "6cd50b8d2b692268dd7335fb99097f0253831f9d7b08275f1d42d17a006448e8"
 
   depends_on "libtool" => :build
   depends_on "bison" => :build
