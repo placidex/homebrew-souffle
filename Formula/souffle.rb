@@ -2,8 +2,8 @@ class Souffle < Formula
   desc "Translator of declarative Datalog programs into the C++ language."
   homepage "https://github.com/souffle-lang/souffle/wiki"
   stable do
-    url "https://dl.bintray.com/souffle-lang/osx/souffle-2.0.0.tar.gz"
-    sha256 "92d0cdf4aab9bec052b207e47a64d621a4c4c4f7740292095d749ac19b0cd84a"
+    url "https://dl.bintray.com/souffle-lang/osx/souffle-2.0.1.tar.gz"
+    sha256 "195ce00068906682b768aee2aac17135ed48943496cbacf40ebeb3064b9eedc7"
   end
   head "https://github.com/souffle-lang/souffle.git", :shallow => false
 
