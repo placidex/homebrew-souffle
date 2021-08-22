@@ -19,7 +19,7 @@ class Souffle < Formula
     end
 
     system "cmake", "-B build -S . -DCMAKE_INSTALL_PREFIX=#{prefix}"
-    system "cmake", "--build build --target install"
+    system "cmake", "--target install"
   end
 
   test do
