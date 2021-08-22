@@ -18,8 +18,8 @@ class Souffle < Formula
       system "git", "fetch", "--tags"
     end
 
-    system "cmake", "-B build -S . -DCMAKE_INSTALL_PREFIX=#{prefix}"
-    system "cmake", "--build build", "--target install"
+    system "cmake", "-B", "build", "-S", ".", "-DCMAKE_INSTALL_PREFIX=#{prefix}"
+    system "cmake", "--build", "build", "--target", "install"
   end
 
   test do
