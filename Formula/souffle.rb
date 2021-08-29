@@ -1,6 +1,6 @@
 class Souffle < Formula
-  desc "Translator of declarative Datalog programs into the C++ language."
-  homepage "https://github.com/souffle-lang/souffle/wiki"
+  desc "Logic Programming Language based on Datalog."
+  homepage "https://souffle-lang.github.io"
   stable do
     url "https://github.com/souffle-lang/souffle/archive/refs/tags/2.1.tar.gz"
     sha256 "866b5aeaf88c0c5c2c1b6cb2b33faa6a0084154f5396e644f11767d6fe82b1d6"
@@ -18,7 +18,7 @@ class Souffle < Formula
       system "git", "fetch", "--tags"
     end
 
-    system "cmake", "-B", "build", "-S", ".", "-DCMAKE_INSTALL_PREFIX=#{prefix}"
+    system "cmake", "-B", "build", "-S", ".", "-DCMAKE_INSTALL_PREFIX=#{prefix}","-DSOUFFLE_GIT=OFF", "-DSOUFFLE_BASH_COMPLETION=OFF"
     system "cmake", "--build", "build", "--target", "install"
   end
 
