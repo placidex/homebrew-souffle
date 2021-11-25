@@ -12,12 +12,13 @@ class Souffle < Formula
   depends_on "libffi" => :build
   depends_on "mcpp"
   depends_on "pkg-config" => :build
+  depends_on "gcc" => :build
 
   def install
     if build.head?
       system "git", "fetch", "--tags"
     end
-
+    
     system "cmake", "-B", "build", "-S", ".", "-DCMAKE_INSTALL_PREFIX=#{prefix}","-DSOUFFLE_GIT=OFF", "-DSOUFFLE_BASH_COMPLETION=OFF"
     system "cmake", "--build", "build", "--target", "install"
   end
