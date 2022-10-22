@@ -20,7 +20,20 @@ class Souffle < Formula
     end
 
     system "cmake", "-B", "build", "-S", ".", "-DCMAKE_INSTALL_PREFIX=#{prefix}","-DSOUFFLE_GIT=OFF", "-DSOUFFLE_BASH_COMPLETION=OFF", "-DCMAKE_C_COMPILER=gcc-11", "-DCMAKE_CXX_COMPILER=g++-11"
+    
+    on_macos do
+      on_arm do
+        system "cmake", "-B", "build", "-S", ".", "-DCMAKE_INSTALL_PREFIX=#{prefix}","-DSOUFFLE_GIT=OFF", "-DSOUFFLE_BASH_COMPLETION=OFF", "-DCMAKE_C_COMPILER=gcc", "-DCMAKE_CXX_COMPILER=g++", "-DCMAKE_CXX_FLAGS=-I#{include}"
+      end
+    end
+
     system "cmake", "--build", "build", "--target", "install", "-j17"
+
+    on_macos do
+      on_arm do
+        system "sed", "-i", ".bak", "s\##{HOMEBREW_PREFIX}/Library/Homebrew/shims/mac/super/g++#/usr/bin/g++#g", "#{bin}/souffle-compile.py"
+      end
+    end
   end
 
   test do
