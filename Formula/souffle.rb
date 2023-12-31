@@ -3,7 +3,7 @@ class Souffle < Formula
   homepage "https://souffle-lang.github.io"
 
   stable do
-    url "https://github.com/souffle-lang/souffle", :using => :git, :tag => "2.3", :shallow => false
+    url "https://github.com/souffle-lang/souffle", :using => :git, :tag => "2.4", :shallow => false
   end
 
   head "https://github.com/souffle-lang/souffle.git", :shallow => false
@@ -38,7 +38,7 @@ class Souffle < Formula
   test do
     assert_equal <<-EOS, shell_output("#{bin}/souffle --version 2>&1")
 ----------------------------------------------------------------------------
-Version: 2.3
+Version: 2.4
 ----------------------------------------------------------------------------
 Copyright (c) 2016-22 The Souffle Developers.
 Copyright (c) 2013-16 Oracle and/or its affiliates.
